@@ -22,11 +22,67 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "AlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "هل لديك حساب؟",
+    ),
+    "ConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
     "Continue": MessageLookupByLibrary.simpleMessage("استمرار"),
+    "DidntReceiveCode": MessageLookupByLibrary.simpleMessage("لم يصلك الرمز؟"),
+    "DontHaveAnAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "EmailVerification": MessageLookupByLibrary.simpleMessage(
+      "التحقق من البريد الإلكتروني",
+    ),
+    "EnterFirstName": MessageLookupByLibrary.simpleMessage("ادخل الاسم الأول"),
+    "EnterLastName": MessageLookupByLibrary.simpleMessage("ادخل الاسم الأخير"),
+    "EnterPassword": MessageLookupByLibrary.simpleMessage("ادخل كلمة المرور"),
+    "EnterPhoneNumber": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتف"),
+    "EnterUserName": MessageLookupByLibrary.simpleMessage("ادخل اسم المستخدم"),
+    "EnterVerificationCode": MessageLookupByLibrary.simpleMessage(
+      "ادخل رمز التحقق",
+    ),
+    "EnterYourEmail": MessageLookupByLibrary.simpleMessage(
+      "ادخل بريدك الإلكتروني",
+    ),
+    "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
+    "ForgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+    "InvalidCode": MessageLookupByLibrary.simpleMessage("رمز غير صالح"),
+    "LastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "NewPassword": MessageLookupByLibrary.simpleMessage("كلمة مرور جديدة"),
     "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "PasswordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast":
+        MessageLookupByLibrary.simpleMessage(
+          "يجب ألا تكون كلمة المرور فارغة ويجب أن تحتوي على 6 أحرف على الأقل، منها حرف كبير ورقم",
+        ),
+    "PasswordNotMatched": MessageLookupByLibrary.simpleMessage(
+      "كلمتا المرور غير متطابقتين",
+    ),
+    "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "PleaseEnterYourCodeThatSendToYourEmailAddress":
+        MessageLookupByLibrary.simpleMessage(
+          "يرجى إدخال الرمز الذي تم إرساله إلى بريدك الإلكتروني",
+        ),
+    "PleaseEnterYourEmailAssociatedToYourAccount":
+        MessageLookupByLibrary.simpleMessage(
+          "يرجى إدخال البريد الإلكتروني المرتبط بحسابك",
+        ),
+    "RememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "Resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
-    "title": MessageLookupByLibrary.simpleMessage("تطبيق الامتحان الإلكتروني"),
+    "ResetPassword": MessageLookupByLibrary.simpleMessage(
+      "إعادة تعيين كلمة المرور",
+    ),
+    "SignUp": MessageLookupByLibrary.simpleMessage("تسجيل حساب"),
+    "ThisEmailIsNotValid": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني غير صالح",
+    ),
+    "ThisUserNameIsNotValid": MessageLookupByLibrary.simpleMessage(
+      "اسم المستخدم غير صالح",
+    ),
+    "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+    "title": MessageLookupByLibrary.simpleMessage("تطبيق الاختبارات"),
   };
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/routing/app_routes.dart';
-import 'package:online_exam_app/features/Auth/presentation/views/sign_up_screen.dart';
+import 'package:online_exam_app/features/Auth/presentation/views/pages/sign_up_screen.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

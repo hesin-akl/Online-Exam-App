@@ -1,4 +1,3 @@
-// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -15,16 +14,30 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../features/Auth/data/dataSource/auth_remote_data_source.dart'
+    as _i532;
+import '../../features/Auth/data/dataSource/auth_remote_data_source_impl.dart'
+    as _i23;
+import '../../features/Auth/data/repository/auth_repository_impl.dart' as _i981;
+import '../../features/Auth/domain/repository/auth_repository.dart' as _i154;
+import '../../features/Auth/domain/useCases/sign_up_usecase.dart' as _i999;
+import '../../features/Auth/presentation/signUp_cubit/signup_cubit.dart'
+    as _i891;
+import '../network/api_service.dart' as _i921;
 import 'modules/dio_module.dart' as _i983;
 import 'modules/shared_preferences_module.dart' as _i813;
 
 extension GetItInjectableX on _i174.GetIt {
-  // initializes the registration of main-scope dependencies inside of GetIt
+// initializes the registration of main-scope dependencies inside of GetIt
   Future<_i174.GetIt> init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
   }) async {
-    final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final gh = _i526.GetItHelper(
+      this,
+      environment,
+      environmentFilter,
+    );
     final sharedPreferencesModule = _$SharedPreferencesModule();
     final dioModuel = _$DioModuel();
     await gh.factoryAsync<_i460.SharedPreferences>(
@@ -32,11 +45,18 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.lazySingleton<_i528.PrettyDioLogger>(
-      () => dioModuel.providePrettyDioLogger(),
-    );
+        () => dioModuel.providePrettyDioLogger());
     gh.lazySingleton<_i361.Dio>(
-      () => dioModuel.provideDio(gh<_i528.PrettyDioLogger>()),
-    );
+        () => dioModuel.provideDio(gh<_i528.PrettyDioLogger>()));
+    gh.factory<_i921.ApiService>(() => _i921.ApiService(gh<_i361.Dio>()));
+    gh.lazySingleton<_i532.AuthRemoteDataSource>(
+        () => _i23.RemoteDataSourceImpl(gh<_i921.ApiService>()));
+    gh.lazySingleton<_i154.AuthRepository>(
+        () => _i981.AuthRepositoryImpl(gh<_i532.AuthRemoteDataSource>()));
+    gh.factory<_i999.SignUpUsecase>(
+        () => _i999.SignUpUsecase(gh<_i154.AuthRepository>()));
+    gh.factory<_i891.SignupCubit>(
+        () => _i891.SignupCubit(gh<_i999.SignUpUsecase>()));
     return this;
   }
 }

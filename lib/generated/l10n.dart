@@ -64,7 +64,10 @@ class S {
     return Intl.message('Continue', name: 'Continue', desc: '', args: []);
   }
 
-  // skipped getter for the 'Sign Up' key
+  /// `Sign Up`
+  String get SignUp {
+    return Intl.message('Sign Up', name: 'SignUp', desc: '', args: []);
+  }
 
   /// `Login`
   String get Login {
@@ -81,68 +84,272 @@ class S {
     return Intl.message('Password', name: 'Password', desc: '', args: []);
   }
 
-  // skipped getter for the 'Confirm password' key
+  /// `Confirm password`
+  String get ConfirmPassword {
+    return Intl.message(
+      'Confirm password',
+      name: 'ConfirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter your email' key
+  /// `Enter your email`
+  String get EnterYourEmail {
+    return Intl.message(
+      'Enter your email',
+      name: 'EnterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter your password' key
+  /// `Enter password`
+  String get EnterPassword {
+    return Intl.message(
+      'Enter password',
+      name: 'EnterPassword',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter password' key
+  /// `Enter phone number`
+  String get EnterPhoneNumber {
+    return Intl.message(
+      'Enter phone number',
+      name: 'EnterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter phone number' key
+  /// `Enter user name`
+  String get EnterUserName {
+    return Intl.message(
+      'Enter user name',
+      name: 'EnterUserName',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter user name' key
+  /// `Enter first name`
+  String get EnterFirstName {
+    return Intl.message(
+      'Enter first name',
+      name: 'EnterFirstName',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter first name' key
+  /// `Enter last name`
+  String get EnterLastName {
+    return Intl.message(
+      'Enter last name',
+      name: 'EnterLastName',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter last name' key
+  /// `Enter verification code`
+  String get EnterVerificationCode {
+    return Intl.message(
+      'Enter verification code',
+      name: 'EnterVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Enter verification code' key
+  /// `New password`
+  String get NewPassword {
+    return Intl.message(
+      'New password',
+      name: 'NewPassword',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'New password' key
+  /// `Forget password`
+  String get ForgetPassword {
+    return Intl.message(
+      'Forget password',
+      name: 'ForgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Forget password' key
+  /// `Please enter your email associated to your account`
+  String get PleaseEnterYourEmailAssociatedToYourAccount {
+    return Intl.message(
+      'Please enter your email associated to your account',
+      name: 'PleaseEnterYourEmailAssociatedToYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Please enter your email associated to your account' key
+  /// `Email verification`
+  String get EmailVerification {
+    return Intl.message(
+      'Email verification',
+      name: 'EmailVerification',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Email verification' key
+  /// `Please enter your code that send to your email address`
+  String get PleaseEnterYourCodeThatSendToYourEmailAddress {
+    return Intl.message(
+      'Please enter your code that send to your email address',
+      name: 'PleaseEnterYourCodeThatSendToYourEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Please enter your code that send to your email address' key
-
-  // skipped getter for the 'Didn\'t receive code?' key
+  /// `Didn't receive code?`
+  String get DidntReceiveCode {
+    return Intl.message(
+      'Didn\'t receive code?',
+      name: 'DidntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
 
   /// `Resend`
   String get Resend {
     return Intl.message('Resend', name: 'Resend', desc: '', args: []);
   }
 
-  // skipped getter for the 'Reset password' key
+  /// `Reset password`
+  String get ResetPassword {
+    return Intl.message(
+      'Reset password',
+      name: 'ResetPassword',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Password must not be empty and must contain 6 characters with upper case letter and one number at least' key
+  /// `Password must not be empty and must contain 6 characters with upper case letter and one number at least`
+  String
+  get PasswordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast {
+    return Intl.message(
+      'Password must not be empty and must contain 6 characters with upper case letter and one number at least',
+      name:
+          'PasswordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'This email is not valid' key
+  /// `This email is not valid`
+  String get ThisEmailIsNotValid {
+    return Intl.message(
+      'This email is not valid',
+      name: 'ThisEmailIsNotValid',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'This user name is not valid' key
+  /// `This user name is not valid`
+  String get ThisUserNameIsNotValid {
+    return Intl.message(
+      'This user name is not valid',
+      name: 'ThisUserNameIsNotValid',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Password not matched' key
+  /// `Password not matched`
+  String get PasswordNotMatched {
+    return Intl.message(
+      'Password not matched',
+      name: 'PasswordNotMatched',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Invalid code' key
+  /// `Invalid code`
+  String get InvalidCode {
+    return Intl.message(
+      'Invalid code',
+      name: 'InvalidCode',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'User name' key
+  /// `User name`
+  String get UserName {
+    return Intl.message('User name', name: 'UserName', desc: '', args: []);
+  }
 
-  // skipped getter for the 'First name' key
+  /// `First name`
+  String get FirstName {
+    return Intl.message('First name', name: 'FirstName', desc: '', args: []);
+  }
 
-  // skipped getter for the 'Last name' key
+  /// `Last name`
+  String get LastName {
+    return Intl.message('Last name', name: 'LastName', desc: '', args: []);
+  }
 
-  // skipped getter for the 'Phone number' key
+  /// `Phone number`
+  String get PhoneNumber {
+    return Intl.message(
+      'Phone number',
+      name: 'PhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Already have an account?' key
+  /// `Already have an account?`
+  String get AlreadyHaveAnAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'AlreadyHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Don\'t have an account?' key
+  /// `Don't have an account?`
+  String get DontHaveAnAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'DontHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the 'Remember me' key
+  /// `Remember me`
+  String get RememberMe {
+    return Intl.message('Remember me', name: 'RememberMe', desc: '', args: []);
+  }
 
-  // skipped getter for the 'Forgot password?' key
+  /// `Forgot password?`
+  String get ForgotPassword {
+    return Intl.message(
+      'Forgot password?',
+      name: 'ForgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

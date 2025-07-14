@@ -22,11 +22,67 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "AlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
+    "ConfirmPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
     "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
+    "DidntReceiveCode": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive code?",
+    ),
+    "DontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "EmailVerification": MessageLookupByLibrary.simpleMessage(
+      "Email verification",
+    ),
+    "EnterFirstName": MessageLookupByLibrary.simpleMessage("Enter first name"),
+    "EnterLastName": MessageLookupByLibrary.simpleMessage("Enter last name"),
+    "EnterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
+    "EnterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter phone number",
+    ),
+    "EnterUserName": MessageLookupByLibrary.simpleMessage("Enter user name"),
+    "EnterVerificationCode": MessageLookupByLibrary.simpleMessage(
+      "Enter verification code",
+    ),
+    "EnterYourEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
+    "FirstName": MessageLookupByLibrary.simpleMessage("First name"),
+    "ForgetPassword": MessageLookupByLibrary.simpleMessage("Forget password"),
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot password?"),
+    "InvalidCode": MessageLookupByLibrary.simpleMessage("Invalid code"),
+    "LastName": MessageLookupByLibrary.simpleMessage("Last name"),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
+    "NewPassword": MessageLookupByLibrary.simpleMessage("New password"),
     "Password": MessageLookupByLibrary.simpleMessage("Password"),
+    "PasswordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast":
+        MessageLookupByLibrary.simpleMessage(
+          "Password must not be empty and must contain 6 characters with upper case letter and one number at least",
+        ),
+    "PasswordNotMatched": MessageLookupByLibrary.simpleMessage(
+      "Password not matched",
+    ),
+    "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+    "PleaseEnterYourCodeThatSendToYourEmailAddress":
+        MessageLookupByLibrary.simpleMessage(
+          "Please enter your code that send to your email address",
+        ),
+    "PleaseEnterYourEmailAssociatedToYourAccount":
+        MessageLookupByLibrary.simpleMessage(
+          "Please enter your email associated to your account",
+        ),
+    "RememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "Resend": MessageLookupByLibrary.simpleMessage("Resend"),
+    "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
+    "SignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "ThisEmailIsNotValid": MessageLookupByLibrary.simpleMessage(
+      "This email is not valid",
+    ),
+    "ThisUserNameIsNotValid": MessageLookupByLibrary.simpleMessage(
+      "This user name is not valid",
+    ),
+    "UserName": MessageLookupByLibrary.simpleMessage("User name"),
     "title": MessageLookupByLibrary.simpleMessage("Online Exam App"),
   };
 }

@@ -26,6 +26,22 @@ abstract class AppTheme {
             bodyColor: AppColors.black[0]!,
             displayColor: AppColors.black[0]!,
           ),
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.black[0]!),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.black[0]!),
+        ),
+        errorBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        labelStyle: TextStyle(color: AppColors.black[0]!),
+        hintStyle: TextStyle(color: AppColors.black[0]!),
+      ),
     );
   }
 
@@ -34,12 +50,12 @@ abstract class AppTheme {
       brightness: Brightness.light,
       primary: AppColors.blue[0]!,
       onPrimary: AppColors.white,
-      secondary: AppColors.black,
+      secondary: AppColors.black[0]!,
       onSecondary: Colors.white,
       error: AppColors.red,
       onError: Colors.white,
       surface: Colors.white,
-      onSurface: Colors.blue,
+      onSurface: AppColors.black[0]!,
     ),
   );
 }
