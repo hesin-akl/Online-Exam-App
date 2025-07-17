@@ -7,8 +7,9 @@ final class SignupInitial extends SignupState {}
 final class SignupLoading extends SignupState {}
 
 final class SignupSuccess extends SignupState {
-  final UserModel user;
-  SignupSuccess({required this.user});
+  final UserModel? user;
+  final String? message ;
+  SignupSuccess({this.user, this.message});
 }
 
 final class SignupFailure extends SignupState {

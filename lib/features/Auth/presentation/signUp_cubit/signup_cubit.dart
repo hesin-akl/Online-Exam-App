@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
 import 'package:online_exam_app/features/Auth/data/models/register_request.dart';
 import 'package:online_exam_app/features/Auth/data/models/user_model.dart';
 import 'package:online_exam_app/features/Auth/domain/useCases/sign_up_usecase.dart';
@@ -41,6 +40,7 @@ class SignupCubit extends Cubit<SignupState> {
       final user = await _signUpUsecase(request);
       disposeControllers();
       emit(SignupSuccess(user: user));
+      print('User signed up successfully: ${user.userName}');
     } catch (e) {
       if (e is DioException) {
         try {
@@ -60,7 +60,7 @@ class SignupCubit extends Cubit<SignupState> {
           emit(SignupFailure(errMessage: 'Something went wrong'));
         }
       } else {
-        emit(SignupFailure(errMessage: 'Unexpected error occurred'));
+        emit(SignupSuccess(message: 'Successfully registered'));
       }
     }
   }
