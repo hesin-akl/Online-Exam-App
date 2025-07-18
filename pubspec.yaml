@@ -22,6 +22,12 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.5.3
   flutter_screenutil: ^5.9.3
+  google_fonts: ^6.2.1
+  flutter_bloc: ^9.1.1
+  dartz: ^0.10.1
+  equatable: ^2.0.7
+  flutter_otp_text_field: ^1.5.1+1
+  loading_animation_widget: ^1.3.0
 
 dev_dependencies:
   flutter_test:
