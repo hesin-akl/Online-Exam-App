@@ -28,7 +28,7 @@ class OnlineExamApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-     supportedLocales: S.delegate.supportedLocales,
+        supportedLocales: S.delegate.supportedLocales,
       ),
     );
   }
