@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/routing/app_routes.dart';
-import 'package:online_exam_app/features/Auth/presentation/views/screens/forget_password.dart';
-import 'package:online_exam_app/features/Auth/presentation/views/screens/login_screen.dart';
-import 'package:online_exam_app/features/Auth/presentation/views/screens/sign_up_screen.dart';
-import 'package:online_exam_app/features/exam/presentation/exam_screen.dart';
-
-import '../../features/Auth/presentation/views/screens/reset_password.dart';
-import '../../features/Auth/presentation/views/screens/verfication_screen.dart';
+import 'package:online_exam_app/features/Auth/presentation/views/sign_up_screen.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -15,31 +9,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const SignUpScreen(),
         );
-      case AppRoutes.login:
-        return MaterialPageRoute(
-          builder: (_) =>
-           LoginScreen(),
-        );
-      case AppRoutes.forgetPassword:
-        return MaterialPageRoute(
-          builder: (_) =>
-              ForgetPassword(),
-        );
-      case AppRoutes.exam:
-        return MaterialPageRoute(
-          builder: (_) =>
-              ExamScreen(),
-        );
-      case AppRoutes.verficationPassword:
-        return MaterialPageRoute(
-          builder: (_) =>
-              VerficationPasswordScreen(),
-        );
-      case AppRoutes.resetPassword:
-        return MaterialPageRoute(
-          builder: (_) =>
-              ResetPassword(),
-        );
+      
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

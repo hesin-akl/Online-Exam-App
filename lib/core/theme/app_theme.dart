@@ -28,6 +28,7 @@ abstract class AppTheme {
           ),
     );
   }
+
   static ThemeData lightTheme = getTheme(
     ColorScheme(
       brightness: Brightness.light,
