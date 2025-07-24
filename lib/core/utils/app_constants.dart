@@ -6,4 +6,5 @@ class AppConstants{
   //auth/forgotPassword
   static const String verfiyPasswordEndPoint="auth/verifyResetCode";
   static const String resetPasswordEndPoint="auth/resetPassword";
+  static const String getAllSubjectsEndPoint="/subjects";
 }
