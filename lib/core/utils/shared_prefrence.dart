@@ -28,13 +28,9 @@ class SharedPreferencesUtils {
     return sharedPreferences.remove(key);
   }
 
-  static Object? getData({required String key}) {
-    return sharedPreferences.get(key);
+  static  Future<dynamic> getData({required String key})async {
+    return await sharedPreferences.get(key);
   }
 
-  // Save user data to SharedPreferences
-  static Future<void> saveDataUserPref(AuthResponse user) async {
-    String userJson = jsonEncode(user.toJson());
-    await sharedPreferences.setString('user_data', userJson);
-  }
+
 }

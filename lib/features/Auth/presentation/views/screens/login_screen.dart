@@ -11,6 +11,7 @@ import 'package:online_exam_app/features/Auth/presentation/views/widgets/custom_
 import 'package:online_exam_app/features/Auth/presentation/views/widgets/custom_txt_field_widget.dart';
 import 'package:online_exam_app/features/Auth/presentation/views/widgets/forget_password_widget.dart';
 import 'package:online_exam_app/features/exam/presentation/exam_screen.dart';
+import 'package:online_exam_app/features/exam/presentation/view/screens/explore_screen.dart';
 import '../../../../../core/di/di.dart';
 import '../../controller/login_cubit/login_cubit.dart';
 import '../../controller/login_cubit/login_state.dart';
@@ -67,7 +68,7 @@ AppDialog.showDialogLoading(context);
                     else if (state is LoginSuccess){
 Navigator.of(context).pop();
 Navigator.push(context, MaterialPageRoute(builder:
-    (context)=>ExamScreen()));
+    (context)=>ExploreScreen()));
 
                     }
                     else if (state is LoginError){

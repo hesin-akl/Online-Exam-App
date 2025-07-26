@@ -14,10 +14,7 @@ import 'package:dartz/dartz.dart';
 abstract class AuthDataSource{
   Future <Either<Failure,AuthResponse>>register(RegisterRequest request);
   Future <Either<Failure,AuthResponse>>login(LoginRequest request);
-  Future <Either<Failure,ForgetPasswordResponse>>
-  forgetPassword(ForgetPasswordRequest request);
-  Future <Either<Failure,VerfiyPasswordResponse>>
-  verfiyPassword(VerfiyPasswordRequest request);
-  Future <Either<Failure,ResetPasswordResponse>>
-  resetPassword(  ResetPasswordRequest request);
+  Future <Either<Failure,ForgetPasswordResponse>> forgetPassword(ForgetPasswordRequest request);
+  Future <Either<Failure,VerfiyPasswordResponse>> verfiyPassword(VerfiyPasswordRequest request);
+  Future <Either<Failure,ResetPasswordResponse>> resetPassword(  ResetPasswordRequest request);
 }

@@ -21,7 +21,7 @@ class OnlineExamApp extends StatelessWidget {
         title: 'Online Exam App',
         theme: AppTheme.lightTheme,
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: AppRoutes.signUp,
+        initialRoute: AppRoutes.explore,
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

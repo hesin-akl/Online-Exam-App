@@ -35,6 +35,15 @@ import '../../features/Auth/presentation/controller/login_cubit/login_cubit.dart
     as _i130;
 import '../../features/Auth/presentation/controller/register_cubit/register_cubit.dart'
     as _i263;
+import '../../features/exam/data/data_source/exam_data_source.dart' as _i831;
+import '../../features/exam/data/data_source/exam_data_source_impl.dart'
+    as _i160;
+import '../../features/exam/data/repo/subject_repo_impl.dart' as _i8;
+import '../../features/exam/domain/repos/exam_repo.dart' as _i569;
+import '../../features/exam/domain/use_case/get_all_subjects_use_case.dart'
+    as _i397;
+import '../../features/exam/presentation/controller/exam_cubit/exam_cubit.dart'
+    as _i280;
 import 'modules/shared_preferences_module.dart' as _i813;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -45,16 +54,16 @@ extension GetItInjectableX on _i174.GetIt {
   }) async {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final sharedPreferencesModule = _$SharedPreferencesModule();
-    final dioModuel = _$DioModuel();
+    final dioModule = _$DioModule();
     await gh.factoryAsync<_i460.SharedPreferences>(
       () => sharedPreferencesModule.provideSharedPreferences(),
       preResolve: true,
     );
     gh.lazySingleton<_i528.PrettyDioLogger>(
-      () => dioModuel.providePrettyDioLogger(),
+      () => dioModule.providePrettyDioLogger(),
     );
     gh.lazySingleton<_i361.Dio>(
-      () => dioModuel.provideDio(gh<_i528.PrettyDioLogger>()),
+      () => dioModule.provideDio(gh<_i528.PrettyDioLogger>()),
     );
     gh.singleton<_i824.ApiService>(() => _i824.ApiService(gh<_i361.Dio>()));
     gh.factory<_i34.AuthDataSource>(
@@ -63,11 +72,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i327.AuthRepo>(
       () => _i218.AuthRepoImpl(gh<_i34.AuthDataSource>()),
     );
+    gh.factory<_i831.ExamRemoteDataSource>(
+      () => _i160.ExamRemoteDataSourceImpl(gh<_i824.ApiService>()),
+    );
     gh.factory<_i957.ForgetPasswordUseCase>(
       () => _i957.ForgetPasswordUseCase(gh<_i327.AuthRepo>()),
     );
     gh.factory<_i476.LoginUseCase>(
       () => _i476.LoginUseCase(gh<_i327.AuthRepo>()),
+    );
+    gh.factory<_i670.RegisterUseCase>(
+      () => _i670.RegisterUseCase(gh<_i327.AuthRepo>()),
     );
     gh.factory<_i930.ResetPasswordUseCase>(
       () => _i930.ResetPasswordUseCase(gh<_i327.AuthRepo>()),
@@ -75,14 +90,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i545.VerfiyPasswordUseCase>(
       () => _i545.VerfiyPasswordUseCase(gh<_i327.AuthRepo>()),
     );
-    gh.factory<_i670.RegisterUseCase>(
-      () => _i670.RegisterUseCase(gh<_i327.AuthRepo>()),
-    );
     gh.factory<_i130.LoginCubit>(
       () => _i130.LoginCubit(gh<_i476.LoginUseCase>()),
     );
     gh.factory<_i263.RegisterCubit>(
       () => _i263.RegisterCubit(gh<_i670.RegisterUseCase>()),
+    );
+    gh.factory<_i569.ExamRepo>(
+      () => _i8.ExamRepoImpl(gh<_i831.ExamRemoteDataSource>()),
+    );
+    gh.factory<_i397.GetAllSubjectsUseCase>(
+      () => _i397.GetAllSubjectsUseCase(gh<_i569.ExamRepo>()),
     );
     gh.factory<_i696.ForgetPasswordCubit>(
       () => _i696.ForgetPasswordCubit(
@@ -91,10 +109,13 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i930.ResetPasswordUseCase>(),
       ),
     );
+    gh.factory<_i280.ExamCubit>(
+      () => _i280.ExamCubit(gh<_i397.GetAllSubjectsUseCase>()),
+    );
     return this;
   }
 }
 
 class _$SharedPreferencesModule extends _i813.SharedPreferencesModule {}
 
-class _$DioModuel extends _i290.DioModuel {}
+class _$DioModule extends _i290.DioModule {}

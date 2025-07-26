@@ -4,6 +4,7 @@ import 'package:online_exam_app/features/Auth/presentation/views/screens/forget_
 import 'package:online_exam_app/features/Auth/presentation/views/screens/login_screen.dart';
 import 'package:online_exam_app/features/Auth/presentation/views/screens/sign_up_screen.dart';
 import 'package:online_exam_app/features/exam/presentation/exam_screen.dart';
+import 'package:online_exam_app/features/exam/presentation/view/screens/explore_screen.dart';
 
 import '../../features/Auth/presentation/views/screens/reset_password.dart';
 import '../../features/Auth/presentation/views/screens/verfication_screen.dart';
@@ -20,16 +21,18 @@ class AppRouter {
           builder: (_) =>
            LoginScreen(),
         );
+        //ExploreScreen
+      case AppRoutes.explore:
+        return MaterialPageRoute(
+          builder: (_) =>
+              ExploreScreen(),
+        );
       case AppRoutes.forgetPassword:
         return MaterialPageRoute(
           builder: (_) =>
               ForgetPassword(),
         );
-      case AppRoutes.exam:
-        return MaterialPageRoute(
-          builder: (_) =>
-              ExamScreen(),
-        );
+
       case AppRoutes.verficationPassword:
         return MaterialPageRoute(
           builder: (_) =>

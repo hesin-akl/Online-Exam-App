@@ -6,6 +6,7 @@ import 'package:online_exam_app/features/Auth/data/models/response/auth_response
 import 'package:online_exam_app/features/Auth/data/models/response/forget_password_response.dart';
 import 'package:online_exam_app/features/Auth/data/models/response/reset_password_response.dart';
 import 'package:online_exam_app/features/Auth/data/models/response/verfiy_password_response.dart';
+import 'package:online_exam_app/features/exam/data/models/subjects_dto/subject_dto.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
@@ -31,8 +32,11 @@ abstract class ApiService {
   Future<VerfiyPasswordResponse>verfiyPassword(@Body()
   VerfiyPasswordRequest request);
   @PUT(AppConstants.resetPasswordEndPoint)
-  Future<ResetPasswordResponse>resetPassword(@Body()
-  ResetPasswordRequest request);
+  Future<ResetPasswordResponse>resetPassword(
+      @Body() ResetPasswordRequest request);
+@GET(AppConstants.getAllSubjectsEndPoint)
+Future<SubjectDto>getAllSubjects
+ (@Header(AppConstants.token)String token);
 }
 
 

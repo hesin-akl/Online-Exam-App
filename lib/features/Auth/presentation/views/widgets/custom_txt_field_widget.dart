@@ -7,11 +7,14 @@ class CustomTxtFieldWidget extends StatelessWidget {
   TextEditingController controller;
   final String hintTxt;
   final String label;
-
+bool isSearch;
+  void Function(String)?onChanged;
   String? Function(String?)? validator;
    CustomTxtFieldWidget({super.key,
      required this.hintTxt,
+     this.isSearch=false,
      required this.label,
+     this.onChanged,
      required this.controller ,
      required this.validator,
    });
@@ -22,10 +25,11 @@ class CustomTxtFieldWidget extends StatelessWidget {
       controller: controller,
       validator: validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
+onChanged: onChanged,
 
       decoration: InputDecoration(
         label: Text(label,style: Styles.style12,),
-
+prefixIcon: isSearch?Icon(Icons.search,color: Colors.grey,):null,
         hintText: hintTxt,
         hintStyle: Styles.style14,
         enabledBorder: OutlineInputBorder(

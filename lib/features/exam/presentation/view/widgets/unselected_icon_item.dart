@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_exam_app/core/theme/app_colors.dart';
+
+class UnselectedIconItem extends StatelessWidget {
+  UnselectedIconItem({super.key, required this.iconData});
+  final IconData iconData;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 64.w,
+      height: 32.h,
+      child: Center(child:
+      Icon(iconData,color: AppColors.blue,),),
+    );
+  }
+}

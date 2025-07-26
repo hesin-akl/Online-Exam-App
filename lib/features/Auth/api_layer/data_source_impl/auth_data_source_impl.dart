@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:online_exam_app/core/utils/app_constants.dart';
 import 'package:online_exam_app/features/Auth/api_layer/api_service/api_service.dart';
 import 'package:online_exam_app/features/Auth/data/models/request/login_request.dart';
 import 'package:online_exam_app/features/Auth/data/models/request/register_request.dart';
@@ -7,8 +8,10 @@ import 'package:online_exam_app/features/Auth/data/models/response/auth_response
 import 'package:online_exam_app/features/Auth/data/models/response/forget_password_response.dart';
 import 'package:online_exam_app/features/Auth/data/models/response/reset_password_response.dart';
 import 'package:online_exam_app/features/Auth/data/models/response/verfiy_password_response.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/error/failure.dart';
 import '../../../../core/error/server_failure.dart';
+import '../../../../core/utils/shared_prefrence.dart';
 import '../../data/data_source/auth_data_source.dart';
 import '../../data/models/request/forget_password_request.dart';
 import '../../data/models/request/reset_password_request.dart';
@@ -23,8 +26,13 @@ class AuthDataSourceImpl implements AuthDataSource{
 try{
 
   var response=await _apiService.login(request);
-  if(response.message=="success"){
 
+
+
+  if(response.message=="success"){
+    await SharedPreferencesUtils.getData(
+      key: AppConstants.token,
+    );
     print("Request Email: ${request.email}");
     print("Request Password: ${request.password}");
     return right(response);
@@ -92,7 +100,10 @@ try{
   Future<Either<Failure, AuthResponse>> register(RegisterRequest request)async {
     try{
       final response=await _apiService.register(request);
+
       if(response.message=="success"){
+        await SharedPreferencesUtils.saveData(key: AppConstants.token, value: response.token);
+        AppConstants.userToken = response.token;
 
         return right(response);
       }else{
