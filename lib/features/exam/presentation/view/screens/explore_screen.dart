@@ -33,13 +33,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
     });
     },
     type: BottomNavigationBarType.fixed,
-    backgroundColor: AppColors.blue[5],
+    backgroundColor: AppColors.lightBlue,
     selectedItemColor: AppColors.blue,
     unselectedItemColor: AppColors.blue,
-
-    items: [
-BottomNavigationBarItem(icon:UnselectedIconItem(iconData: CupertinoIcons.home),
-      activeIcon: SelectedIconItem(iconData: CupertinoIcons.home),
+      items: [
+       BottomNavigationBarItem(icon:UnselectedIconItem(iconData: CupertinoIcons.home),
+       activeIcon: SelectedIconItem(iconData: CupertinoIcons.home),
       
       label: 'Explore',),
       BottomNavigationBarItem(icon:UnselectedIconItem(iconData:

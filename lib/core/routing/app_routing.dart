@@ -4,7 +4,10 @@ import 'package:online_exam_app/features/Auth/presentation/views/screens/forget_
 import 'package:online_exam_app/features/Auth/presentation/views/screens/login_screen.dart';
 import 'package:online_exam_app/features/Auth/presentation/views/screens/sign_up_screen.dart';
 import 'package:online_exam_app/features/exam/presentation/exam_screen.dart';
+import 'package:online_exam_app/features/exam/presentation/view/screens/exam_based_on_subject.dart';
+import 'package:online_exam_app/features/exam/presentation/view/screens/exam_screen.dart';
 import 'package:online_exam_app/features/exam/presentation/view/screens/explore_screen.dart';
+import 'package:online_exam_app/features/exam/presentation/view/screens/start_exam.dart';
 
 import '../../features/Auth/presentation/views/screens/reset_password.dart';
 import '../../features/Auth/presentation/views/screens/verfication_screen.dart';
@@ -19,7 +22,24 @@ class AppRouter {
       case AppRoutes.login:
         return MaterialPageRoute(
           builder: (_) =>
+
            LoginScreen(),
+        );
+      //ExamScreen
+      case AppRoutes.exam:
+        return MaterialPageRoute(
+          builder: (_) =>
+              ExamScreen(),
+        );
+        case AppRoutes.startExam:
+        return MaterialPageRoute(
+          builder: (_) =>
+              StartExam(),
+        );
+      case AppRoutes.subjectOnAllExam:
+        return MaterialPageRoute(
+          builder: (_) =>
+              ExamBasedOnSubject(),
         );
         //ExploreScreen
       case AppRoutes.explore:

@@ -6,11 +6,13 @@ import 'package:online_exam_app/features/Auth/data/models/response/auth_response
 import 'package:online_exam_app/features/Auth/data/models/response/forget_password_response.dart';
 import 'package:online_exam_app/features/Auth/data/models/response/reset_password_response.dart';
 import 'package:online_exam_app/features/Auth/data/models/response/verfiy_password_response.dart';
+import 'package:online_exam_app/features/exam/data/models/response/exam_on_subject_dto/exam_on_subject_dto.dart';
 import 'package:online_exam_app/features/exam/data/models/subjects_dto/subject_dto.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
 import '../../../../core/utils/app_constants.dart';
+import '../../../exam/data/models/response/questions_by_exams/questions_by_exams_dto.dart' show QuestionsByExamsDto;
 import '../../data/models/request/forget_password_request.dart';
 import '../../data/models/request/reset_password_request.dart';
 import '../../data/models/request/verfiy_password_request.dart';
@@ -37,6 +39,17 @@ abstract class ApiService {
 @GET(AppConstants.getAllSubjectsEndPoint)
 Future<SubjectDto>getAllSubjects
  (@Header(AppConstants.token)String token);
+@GET(AppConstants.examBySubjectsEndPoint)
+  Future<ExamonSubjectDto>ExamBySubjects
+      (
+    @Query("subject")String id,
+    @Header(AppConstants.token)String token);
+//is this function right?
+  @GET(AppConstants.questionsByexamEndPoint)
+  Future<QuestionsByExamsDto>questionsByExam
+      (
+      @Query("exam")String id,
+      @Header(AppConstants.token)String token);
 }
 
 

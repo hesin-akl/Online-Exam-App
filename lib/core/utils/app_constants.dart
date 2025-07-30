@@ -7,7 +7,11 @@ class AppConstants{
   static const String verfiyPasswordEndPoint="auth/verifyResetCode";
   static const String resetPasswordEndPoint="auth/resetPassword";
   static const String getAllSubjectsEndPoint="subjects";
-  //token
+  ///exams?subject=
+  ///
+  static const String examBySubjectsEndPoint="exams?";
+  //https://exam.elevateegy.com/api/v1/questions?exam=670070a830a3c3c1944a9c63
+  static const String questionsByexamEndPoint="questions?";
   static const String  token="token";
   static String? userToken;
 }

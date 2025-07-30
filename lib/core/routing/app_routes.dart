@@ -5,7 +5,9 @@ abstract class AppRoutes {
   static const String forgetPassword = '/forgetPassword';
   static const String verficationPassword = '/verficationPassword';
   static const String resetPassword = '/resetPassword';
-  //ExploreScreen
+  //StartExam
   static const String explore = '/ExploreScreen';
-
+  static const String startExam = '/StartExam';
+  static const String exam = '/Exam';
+  static const String subjectOnAllExam = '/ExamBasedOnSubject';
 }
