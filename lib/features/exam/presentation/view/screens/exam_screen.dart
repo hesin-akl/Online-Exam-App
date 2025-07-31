@@ -6,6 +6,7 @@ import 'package:online_exam_app/core/di/di.dart';
 import 'package:online_exam_app/core/theme/app_colors.dart';
 import 'package:online_exam_app/features/exam/domain/entity/exam_entity.dart';
 import 'package:online_exam_app/features/exam/presentation/controller/exam_cubit/explore_cubit.dart';
+import 'package:online_exam_app/features/exam/presentation/view/widgets/alert_time_dialog.dart';
 import 'package:online_exam_app/features/exam/presentation/view/widgets/question_item.dart';
 
 import '../../../../../core/theme/styles.dart';
@@ -16,15 +17,13 @@ class ExamScreen extends StatefulWidget {
   @override
   State<ExamScreen> createState() => _ExamScreenState();
 }
-
 class _ExamScreenState extends State<ExamScreen> {
   int currentPage = 0;
   var controller = PageController();
-
-  @override
+@override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<ExploreCubit>()
+      create: (context) => getIt.get<ExploreCubit>()
         ..questionsByExam(
          widget.examEntity!.id!,
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzNmMDRkNTU1NGIzMjg5MTJlNTYyYyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUzNjU1NzU3fQ.kgqCfdi8S9d1xL2a9uRK6J01K7xfTIdwqvIPaKNIsJE",
@@ -37,20 +36,21 @@ class _ExamScreenState extends State<ExamScreen> {
             Icon(Icons.arrow_back_ios, color: Colors.black,)),
             title: Text('Exam ', style: Styles.style20,),
             actions: [
-              IconButton(
-                icon: Row(
-                  children: [
-                    Image.asset("assets/images/timer.png"),
-                    SizedBox(width: 10.w,),
-                    Text("timer", style: Styles.style20.copyWith(
-                        color: AppColors.green
-                    ),),
-                    SizedBox(width: 10.w,),
-                  ],
-                ),
-                onPressed: () {
-                  // Handle settings action
-                },
+              Row(
+                children: [
+                  GestureDetector(
+                      onTap: (){
+                        showDialog(context: context,
+                            barrierDismissible: false,
+                            builder: (context)=>AlertTimeDialog());
+                      },
+                      child: Image.asset("assets/images/timer.png")),
+                  SizedBox(width: 10.w,),
+                  Text("timer", style: Styles.style20.copyWith(
+                      color: AppColors.green
+                  ),),
+                  SizedBox(width: 10.w,),
+                ],
               ),
             ],
           ),
@@ -59,10 +59,10 @@ class _ExamScreenState extends State<ExamScreen> {
               return LoadingAnimationComponemt();
             }
             if(state.errorMessagequestions!=null){
-              return Center(child: Text(state.errorMessagequestions.toString()));
+              return Center(child:
+          Text(state.errorMessagequestions.toString()));
             }
-         
-            return  PageView.builder(
+  return  PageView.builder(
                 itemCount: state.questions.length,
                 controller: controller,
                 onPageChanged: (index) {

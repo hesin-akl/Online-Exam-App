@@ -12,9 +12,6 @@ QuestionsByExamsDto _$QuestionsByExamsDtoFromJson(Map<String, dynamic> json) =>
       questions: (json['questions'] as List<dynamic>?)
           ?.map((e) => Questions.fromJson(e as Map<String, dynamic>))
           .toList(),
-      answers: (json['answers'] as List<dynamic>?)
-          ?.map((e) => Answers.fromJson(e as Map<String, dynamic>))
-          .toList(),
     );
 
 Map<String, dynamic> _$QuestionsByExamsDtoToJson(
@@ -22,7 +19,6 @@ Map<String, dynamic> _$QuestionsByExamsDtoToJson(
 ) => <String, dynamic>{
   'message': instance.message,
   'questions': instance.questions,
-  'answers': instance.answers,
 };
 
 Questions _$QuestionsFromJson(Map<String, dynamic> json) => Questions(

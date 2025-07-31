@@ -9,12 +9,12 @@ import 'package:online_exam_app/features/exam/domain/entity/subject_entity.dart'
 import 'package:online_exam_app/features/exam/domain/use_case/exom_on_subject_use_case.dart';
 import 'package:online_exam_app/features/exam/domain/use_case/get_all_subjects_use_case.dart';
 import 'package:online_exam_app/features/exam/domain/use_case/questions_by_exam_use_case.dart';
-
 part 'explore_state.dart';
 @injectable
 class ExploreCubit extends Cubit<ExploreState> {
   ExploreCubit(this._getAllSubjectsUseCase,
-      this._examOnSubjectUseCase,this._questionsByExamUseCase) : super(ExploreState());
+ this._examOnSubjectUseCase,
+      this._questionsByExamUseCase) : super(ExploreState());
 GetAllSubjectsUseCase _getAllSubjectsUseCase;
 ExamOnSubjectUseCase _examOnSubjectUseCase;
   QuestionsByExamUseCase _questionsByExamUseCase;
@@ -36,7 +36,6 @@ ExamOnSubjectUseCase _examOnSubjectUseCase;
   Future<void> examOnSubjects(String id,String token) async {
     emit(state.copyWith(
         isLoadingexamOnSubjects:true,
-
     ));
     final result=await _examOnSubjectUseCase.examOnSubjects(id, token);
     switch(result){
@@ -61,9 +60,8 @@ emit(state.copyWith(
 ));
     final result=await
     _questionsByExamUseCase.questionsByExam(id, token);
+    print(result.toString());
 switch(result){
-
-
   case ApiSuccessResults<List<QuestionEntity>>():
     emit(state.copyWith(
       isLoadingQuestionByexam: false,

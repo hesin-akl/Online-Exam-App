@@ -50,7 +50,7 @@ return ApiErrorResults(error.toString());
  return ApiSuccessResults(questions);
 
 
-   } catch(error){
+   }on ServerFailure catch(error){
      print("error in get  questions${error.toString()}");
 return ApiErrorResults(error.toString());
    }

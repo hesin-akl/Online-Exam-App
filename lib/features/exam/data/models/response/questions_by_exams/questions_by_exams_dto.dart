@@ -11,21 +11,20 @@ class QuestionsByExamsDto {
   final String? message;
   @JsonKey(name: "questions")
   final List<Questions>? questions;
-  @JsonKey(name: "answers") // إضافة حقل answers
-  final List<Answers>? answers;
 
-  QuestionsByExamsDto({
+  QuestionsByExamsDto ({
     this.message,
     this.questions,
-    this.answers,
   });
 
-  factory QuestionsByExamsDto.fromJson(Map<String, dynamic> json) =>
-      _$QuestionsByExamsDtoFromJson(json);
+  factory QuestionsByExamsDto.fromJson(Map<String, dynamic> json) {
+    return _$QuestionsByExamsDtoFromJson(json);
+  }
 
-  Map<String, dynamic> toJson() => _$QuestionsByExamsDtoToJson(this);
+  Map<String, dynamic> toJson() {
+    return _$QuestionsByExamsDtoToJson(this);
+  }
 }
-
 @JsonSerializable()
 class Questions {
   @JsonKey(name: "answers")
@@ -45,7 +44,7 @@ class Questions {
   @JsonKey(name: "createdAt")
   final String? createdAt;
 
-  Questions({
+  Questions ({
     this.answers,
     this.type,
     this.Id,
@@ -56,20 +55,17 @@ class Questions {
     this.createdAt,
   });
 
-  factory Questions.fromJson(Map<String, dynamic> json) =>
-      _$QuestionsFromJson(json);
+  factory Questions.fromJson(Map<String, dynamic> json) {
+    return _$QuestionsFromJson(json);
+  }
 
-  Map<String, dynamic> toJson() => _$QuestionsToJson(this);
-
-  QuestionEntity toEntity() => QuestionEntity(
-    Id: Id,
-    type: type,
-    correct: correct,
-    createdAt: createdAt,
-    exam: exam,
-    answers: answers?.map((e) => e.toEntity()).toList(),
-    question: question,
-    subject: subject,
+  Map<String, dynamic> toJson() {
+    return _$QuestionsToJson(this);
+  }
+  QuestionEntity toEntity()=>QuestionEntity(
+    answers: answers?.map((e)=>e.toEntity()).toList(),
+    type: type,Id: Id,question: question,
+    correct: correct,createdAt: createdAt,exam: exam
   );
 }
 
@@ -80,19 +76,20 @@ class Answers {
   @JsonKey(name: "key")
   final String? key;
 
-  Answers({
+  Answers ({
     this.answer,
     this.key,
   });
 
-  factory Answers.fromJson(Map<String, dynamic> json) =>
-      _$AnswersFromJson(json);
+  factory Answers.fromJson(Map<String, dynamic> json) {
+    return _$AnswersFromJson(json);
+  }
 
-  Map<String, dynamic> toJson() => _$AnswersToJson(this);
-
-  AnswerEntity toEntity() => AnswerEntity(
-    answer: answer,
-    key: key,
+  Map<String, dynamic> toJson() {
+    return _$AnswersToJson(this);
+  }
+  AnswerEntity toEntity()=>AnswerEntity(
+    answer: answer,key: key
   );
 }
 
@@ -113,7 +110,7 @@ class Exam {
   @JsonKey(name: "createdAt")
   final String? createdAt;
 
-  Exam({
+  Exam ({
     this.Id,
     this.title,
     this.duration,
@@ -123,17 +120,17 @@ class Exam {
     this.createdAt,
   });
 
-  factory Exam.fromJson(Map<String, dynamic> json) => _$ExamFromJson(json);
+  factory Exam.fromJson(Map<String, dynamic> json) {
+    return _$ExamFromJson(json);
+  }
 
-  Map<String, dynamic> toJson() => _$ExamToJson(this);
-
-  ExamEntity toEntity() => ExamEntity(
-    id: Id,
-    active: active,
-    numberOfQuestions: numberOfQuestions,
-    createdAt: createdAt,
-    title: title,
-    duration: duration,
-    subjectId: subject,
+  Map<String, dynamic> toJson() {
+    return _$ExamToJson(this);
+  }
+  ExamEntity toEntity()=>ExamEntity(
+    id: Id,title: title,duration: duration,subjectId: subject,numberOfQuestions: numberOfQuestions,
+    createdAt: createdAt,active: active
   );
 }
+
+

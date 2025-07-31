@@ -9,7 +9,7 @@ class QuestionItem extends StatelessWidget {
    QuestionItem({super.key,this.onNext,this.onBack, required this.questionEntity});
    void Function()?onNext;
    void Function()?onBack;
- final  QuestionEntity questionEntity;
+   QuestionEntity questionEntity;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -34,7 +34,7 @@ class QuestionItem extends StatelessWidget {
 
                // isSelected: ,
               );
-            },itemCount: 4,),
+            },itemCount: questionEntity.answers!.length,),
 
           SizedBox(height: 50.h,),
           Row(

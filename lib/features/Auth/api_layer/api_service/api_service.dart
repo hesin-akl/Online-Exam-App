@@ -7,6 +7,7 @@ import 'package:online_exam_app/features/Auth/data/models/response/forget_passwo
 import 'package:online_exam_app/features/Auth/data/models/response/reset_password_response.dart';
 import 'package:online_exam_app/features/Auth/data/models/response/verfiy_password_response.dart';
 import 'package:online_exam_app/features/exam/data/models/response/exam_on_subject_dto/exam_on_subject_dto.dart';
+import 'package:online_exam_app/features/exam/data/models/response/questions_by_exams/questions_by_exams_dto.dart' show QuestionsByExamsDto;
 import 'package:online_exam_app/features/exam/data/models/subjects_dto/subject_dto.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
